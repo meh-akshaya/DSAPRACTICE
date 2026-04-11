@@ -5,9 +5,20 @@ int main() {
     string s;
     cin >> s;
     stack<char> str;
-    for (int i=0; i<s.size(); i++) {
-        str.push(s[i]);
+    if (s.size()%2 == !0) {
+        cout << "NO";
     }
-    if 
+    else if {
+        for (int i=0; i<s.size(); i++) {
+            if (s[i] == '(' || s[i] == '{' || s[i] == '[') {
+                str.push(s[i]);
+            }
+            else {
+                if (s[i] == str.top()) {
+                    str.pop();
+                }
+            }
+        }
+    }
 
 }
