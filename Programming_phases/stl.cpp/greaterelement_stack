@@ -1,0 +1,30 @@
+#include <iostream>
+#include <stack>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i=0; i<n; i++ ) {
+        cin >> a[i];
+    }
+    stack <int> s;
+    for (int i=n-1; i>=0; i--) {
+            while (!s.empty() && s.top() <= a[i] ) {
+                s.pop();
+
+            }
+        if (s.empty()) {
+                cout << -1 << " "; 
+            }
+        else {
+                cout << s.top() << " ";
+            }
+        s.push(a[i]);
+
+        }
+
+        
+    }
+//abhi output reverse me aa raha hai, isko reverse karna hai.
+//revise krte rehna hai ye question , #tough laga tha ye logic samajhne me, stack me top se chota element aane tak pop krte raho, jab chota element mil jaye to usko print krdo, agar stack empty ho jaye to -1 print krdo, aur current element ko stack me push krdo.
