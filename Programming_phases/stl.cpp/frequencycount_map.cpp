@@ -2,8 +2,15 @@
 #include <map>
 using namespace std;
 int main() {
-    map<int,int> m;
     int n;
     cin >> n;
-    for 
+    map<int,int> m;
+    for (int i=0; i<n; i++) {
+        int x;
+        cin >> x;
+        m[x]++;
+    }
+    for (auto it : m) {
+        cout << it.first << " " << it.second << endl;
+    }
 }
