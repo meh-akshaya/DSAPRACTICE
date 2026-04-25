@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 int main() {
@@ -13,23 +14,10 @@ int main() {
     int x;
     cin >> x;
 
-    int left = 0, right = n - 1;
-    int ans = -1;
+    int lb = lower_bound(a, a + n, x) - a;
+    int ub = upper_bound(a, a + n, x) - a;
 
-    while (left <= right) {
-        int mid = left + (right - left) / 2;
+    int count = ub - lb;
 
-        if (a[mid] == x) {
-            ans = mid;         // store answer
-            right = mid - 1;   // 🔥 move left
-        }
-        else if (a[mid] < x) {
-            left = mid + 1;
-        }
-        else {
-            right = mid - 1;
-        }
-    }
-
-    cout << ans;
+    cout << count;
 }
