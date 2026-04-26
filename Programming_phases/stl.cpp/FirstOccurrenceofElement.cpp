@@ -3,21 +3,17 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin >> n;
-
-    int a[n];
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-
     int x;
     cin >> x;
-
-    int lb = lower_bound(a, a + n, x) - a;
-    int ub = upper_bound(a, a + n, x) - a;
-
-    int count = ub - lb;
-
-    cout << count;
+    int arr[x];
+    for (int i=0; i<x; i++) {
+        cin >> arr[i];
+    }
+    int n = sizeof(arr)/sizeof(arr[0]);
+    sort(arr,arr+n);
+    int element;
+    cin >> element;
+    int p= lower_bound(arr,arr+x,element) - arr;
+    int q= upper_bound(arr,arr+x,element) - arr;
+    cout << q-p << endl;
 }
