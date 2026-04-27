@@ -1,5 +1,5 @@
 #include <iostream>
-#include <unordered_map>
+#include <map>
 using namespace std;
 int main() {
     int x;
@@ -8,10 +8,14 @@ int main() {
     for (int i=0; i<x; i++) {
         cin >> arr[i];
     }
-    unordered_map<int,int> m;
+    map<int,int> m;
     for (int i=0; i<x; i++ ) {
         m[arr[i]]++;
     }
-    for ()
-
+    for (int i=0; i<x; i++) {
+        if (m[arr[i]]>1) {
+            cout << arr[i] << " ";
+            break;
+        }
+    }
 }
