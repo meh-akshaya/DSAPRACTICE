@@ -8,7 +8,6 @@ int main() {
     vector <int> v(N);
     vector <int> vsum;
     for (int i=0; i<N; i++){
-        cin >> v[i];
     }
     
     
